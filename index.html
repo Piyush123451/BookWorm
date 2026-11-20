@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bookworm | Discover Your Next Story</title>
+
+    <meta name="description"
+          content="Discover books, explore authors and find your next favourite story with Bookworm.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✦</span>
+                Bookworm
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="#discover">Discover</a>
+                <a href="#genres">Genres</a>
+                <a href="#library">My Library</a>
+            </nav>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn"
+                    aria-label="Toggle navigation">
+                ☰
+            </button>
+
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="#discover">Discover</a>
+            <a href="#genres">Genres</a>
+            <a href="#library">My Library</a>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    YOUR NEXT CHAPTER STARTS HERE
+                </span>
+
+                <h1>
+                    Between the pages,<br>
+                    <span>find yourself.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover extraordinary stories, explore new perspectives
+                    and find books that stay with you long after the last page.
+                </p>
+
+                <!-- Search -->
+                <form class="search-box" id="searchForm">
+
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search books, authors, or ISBN..."
+                        autocomplete="off"
+                    >
+
+                    <button type="submit">
+                        Search
+                    </button>
+
+                </form>
+
+                <p class="search-hint">
+                    Explore thousands of stories waiting to be discovered.
+                </p>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <div class="hero-decoration decoration-one"></div>
+                <div class="hero-decoration decoration-two"></div>
+
+                <div class="hero-book">
+                    <img
+                        src="https://covers.openlibrary.org/b/id/8231856-L.jpg"
+                        alt="Featured book cover"
+                    >
+                </div>
+
+                <div class="floating-note">
+                    <span>✧</span>
+                    Every book opens a new world.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Discover Section -->
+        <section class="section" id="discover">
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">A WORLD OF STORIES</span>
+            <h2>Discover your next read.</h2>
+            <p>Some stories are waiting to find you.</p>
+        </div>
+        <a href="#discover" class="text-link" id="exploreAll">Surprise me →</a>
+    </div>
+
+    <div class="chips" id="chips">
+        <button class="chip active" data-query='subject:"fiction"'>Fiction</button>
+        <button class="chip" data-query='subject:"mystery"'>Mystery</button>
+        <button class="chip" data-query='subject:"science fiction"'>Sci-Fi</button>
+        <button class="chip" data-query='subject:"philosophy"'>Philosophy</button>
+        <button class="chip" data-query='subject:"romance"'>Romance</button>
+        <button class="chip" data-query='subject:"history"'>History</button>
+        <button class="chip" data-query='subject:"fantasy"'>Fantasy</button>
+    </div>
+
+    <div class="book-grid" id="bookGrid"></div>
+
+    <div class="load-more-wrap">
+        <button class="load-more" id="loadMoreBtn" hidden>Load more books</button>
+    </div>
+</section>
+
+
+        <!-- Genres Section -->
+        <section class="genre-section" id="genres">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">FOLLOW YOUR CURIOSITY</span>
+                    <h2>Explore by genre.</h2>
+                    <p>What kind of world would you like to enter today?</p>
+                </div>
+
+            </div>
+
+            <div class="genre-grid">
+    <button class="genre-card" data-query='subject:"fiction"' style="--accent:#A65F45">
+        <span class="genre-icon">📖</span>
+        <h3>Fiction</h3>
+        <p>Worlds beyond imagination</p>
+        <span class="genre-arrow">→</span>
+    </button>
+    <button class="genre-card" data-query='subject:"philosophy"' style="--accent:#6B5B95">
+        <span class="genre-icon">🧠</span>
+        <h3>Philosophy</h3>
+        <p>Questions worth exploring</p>
+        <span class="genre-arrow">→</span>
+    </button>
+    <button class="genre-card" data-query='subject:"mystery"' style="--accent:#3F6C73">
+        <span class="genre-icon">🔍</span>
+        <h3>Mystery</h3>
+        <p>Secrets waiting to unfold</p>
+        <span class="genre-arrow">→</span>
+    </button>
+    <button class="genre-card" data-query='subject:"science fiction"' style="--accent:#3E6FB0">
+        <span class="genre-icon">🚀</span>
+        <h3>Science Fiction</h3>
+        <p>Beyond the edge of reality</p>
+        <span class="genre-arrow">→</span>
+    </button>
+    <button class="genre-card" data-query='subject:"fantasy"' style="--accent:#7A4FA3">
+        <span class="genre-icon">🐉</span>
+        <h3>Fantasy</h3>
+        <p>Magic, myth and wonder</p>
+        <span class="genre-arrow">→</span>
+    </button>
+    <button class="genre-card" data-query='subject:"romance"' style="--accent:#B8506A">
+        <span class="genre-icon">💌</span>
+        <h3>Romance</h3>
+        <p>Stories of the heart</p>
+        <span class="genre-arrow">→</span>
+    </button>
+    <button class="genre-card" data-query='subject:"history"' style="--accent:#8A6A2F">
+        <span class="genre-icon">🏛️</span>
+        <h3>History</h3>
+        <p>The past, brought to life</p>
+        <span class="genre-arrow">→</span>
+    </button>
+    <button class="genre-card" data-query='subject:"horror"' style="--accent:#5A2E2E">
+        <span class="genre-icon">🕯️</span>
+        <h3>Horror</h3>
+        <p>Read with the lights on</p>
+        <span class="genre-arrow">→</span>
+    </button>
+</div>
+
+        </section>
+
+
+        <!-- Personal Library Section -->
+        <section class="section" id="library">
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">YOUR PERSONAL COLLECTION</span>
+            <h2>My Library</h2>
+            <p id="libraryCount">0 books saved</p>
+        </div>
+        <button class="text-link link-btn" id="clearLibrary">Clear all</button>
+    </div>
+
+    <div class="book-grid" id="libraryGrid"></div>
+</section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✦</span>
+                Bookworm
+            </a>
+
+            <p>
+                Made for the love of stories.
+            </p>
+
+            <span class="copyright">
+                © 2026 Bookworm. A personal project.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="css/js/book.js"></script>
+    <script src="css/js/api.js"></script>
+    <script src="css/js/main.js"></script>
+
+</body>
+</html>
